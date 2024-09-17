@@ -64,8 +64,8 @@
     "Alpha Component" : 1,
     "Green Component" : 0.43921568989753723
   },
-  "Columns" : 140,
-  "Right Option Key Sends" : 0,
+  "Columns" : 120,
+  "Right Option Key Sends" : 2,
   "Ansi 4 Color (Light)" : {
     "Red Component" : 0.15404300391674042,
     "Color Space" : "sRGB",
@@ -307,7 +307,7 @@
     "Green Component" : 1
   },
   "Silence Bell" : false,
-  "Rows" : 40,
+  "Rows" : 35,
   "Guid" : "30F4C48D-B602-4C41-AE3A-EF9059B39987",
   "Ansi 14 Color (Dark)" : {
     "Red Component" : 0.37597531080245972,
@@ -331,7 +331,7 @@
     "Green Component" : 0.098039217293262482
   },
   "Ambiguous Double Width" : false,
-  "Option Key Sends" : 0,
+  "Option Key Sends" : 2,
   "Ansi 3 Color" : {
     "Red Component" : 0.94117647058823528,
     "Color Space" : "P3",
@@ -365,6 +365,7 @@
     "Alpha Component" : 0.25,
     "Green Component" : 0.80232617749205526
   },
+  "ASCII Ligatures" : false,
   "Send Code When Idle" : false,
   "Ansi 6 Color" : {
     "Red Component" : 0.47058823704719543,
@@ -515,8 +516,9 @@
   },
   "Name" : "hikari",
   "Blink Allowed" : false,
-  "Transparency" : 0.19999999999999996,
+  "Transparency" : 0.10000000000000001,
   "Horizontal Spacing" : 1,
+  "Thin Strokes" : 4,
   "Cursor Color (Dark)" : {
     "Red Component" : 0.99997633695602417,
     "Color Space" : "sRGB",
@@ -650,7 +652,7 @@
   "Tags" : [
 
   ],
-  "Blur Radius" : 19.788838098404256,
+  "Blur Radius" : 10,
   "Set Local Environment Vars" : 2,
   "Ansi 6 Color (Light)" : {
     "Red Component" : 0,
@@ -683,7 +685,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.94117647058823528
   },
-  "Normal Font" : "ComicMono 16",
+  "Normal Font" : "ComicShannsMonoNFM-Regular 16",
   "Unlimited Scrollback" : false,
   "Ansi 12 Color (Light)" : {
     "Red Component" : 0.65349078178405762,
