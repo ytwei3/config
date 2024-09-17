@@ -6,4 +6,4 @@
 !/nvim/**
 
 !/iterm2/
-!/iterm2/**
+!/iterm2/hikari.json
