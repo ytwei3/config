@@ -1,4 +1,6 @@
 vim.keymap.set('i', 'jk', '<Esc>')
+vim.keymap.set('i', 'kj', '<Esc>')
+vim.keymap.set('t', '<C-`>', '<Cmd>:q<CR>')
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`

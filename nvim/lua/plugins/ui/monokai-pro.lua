@@ -5,9 +5,15 @@ return {
 
   opts = {
     transparent_background = true,
+    terminal_color = true,
     devicons = true,
 
-    background_clear = { 'float_win', 'telescope' },
+    background_clear = {
+      'float_win',
+      'telescope',
+      'neo-tree',
+      'notify',
+    },
   },
   config = function(_, opts)
     local monokai = require 'monokai-pro'
