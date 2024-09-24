@@ -17,6 +17,16 @@ return {
     popup_border_style = 'rounded',
 
     filesystem = {
+      filtered_items = {
+        visable = true,
+        hide_dotfiles = false,
+        hide_gitignored = true,
+        hide_by_name = {
+          '.git',
+          '.DS_Store',
+        },
+      },
+
       window = {
         position = 'right',
         mappings = {
