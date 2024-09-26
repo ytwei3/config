@@ -14,41 +14,11 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins you can run
---    :Lazy update
---
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   'tpope/vim-sleuth',
 
-  -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
-  --
-  -- This is often very useful to both group configuration, as well as handle
-  -- lazy loading plugins that don't need to be loaded immediately at startup.
-  --
-  -- For example, in the following configuration, we use:
-  --  event = 'VimEnter'
-  --
-  -- which loads which-key before all the UI elements are loaded. Events can be
-  -- normal autocommands events (`:help autocmd-events`).
-  --
-  -- Then, because we use the `config` key, the configuration only runs
-  -- after the plugin has been loaded:
-  --  config = function() ... end
-
   -- NOTE: Plugins can specify dependencies.
   --
-  -- The dependencies are proper plugin specifications as well - anything
-  -- you do for a plugin at the top level, you can do for a dependency.
-  --
-  -- Use the `dependencies` key to specify the dependencies of a particular plugin
-
   { -- fuzzy finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'vimenter',
@@ -363,7 +333,7 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'clangd',
+        -- 'clangd',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -540,6 +510,7 @@ require('lazy').setup({
           { name = 'path' },
         },
         window = {
+          border = 'rounded',
           completion = cmp.config.window.bordered 'bordered',
           documentation = cmp.config.window.bordered 'bordered',
         },
