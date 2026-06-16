@@ -123,7 +123,7 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'MunifTanjim/nui.nvim',
-      { 'rcarriga/nvim-notify', opts = { render = 'compact', timeout = 3000 } },
+      { 'rcarriga/nvim-notify', opts = { render = 'compact', timeout = 3000, background_colour = '#2D2A2E' } },
     },
     opts = {
       lsp = {

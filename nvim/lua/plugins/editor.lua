@@ -2,6 +2,28 @@ return {
   -- Auto-detect indentation (tab vs space, width)
   { 'tpope/vim-sleuth' },
 
+  -- Code lens: show reference/implementation counts above symbols
+  {
+    'Wansmer/symbol-usage.nvim',
+    event = 'LspAttach',
+    opts = {
+      vt_position = 'end_of_line',
+      text_format = function(symbol)
+        local res = {}
+        if symbol.references and symbol.references > 0 then
+          table.insert(res, ('󰌹 %d ref'):format(symbol.references))
+        end
+        if symbol.definition and symbol.definition > 0 then
+          table.insert(res, ('󰳽 %d def'):format(symbol.definition))
+        end
+        if symbol.implementation and symbol.implementation > 0 then
+          table.insert(res, ('󰡱 %d impl'):format(symbol.implementation))
+        end
+        return table.concat(res, '  ')
+      end,
+    },
+  },
+
   -- Session persistence: restore files on reopen
   {
     'folke/persistence.nvim',
@@ -57,6 +79,9 @@ return {
     },
     config = function()
       require('telescope').setup {
+        defaults = {
+          preview = { treesitter = false },
+        },
         extensions = {
           ['ui-select'] = { require('telescope.themes').get_dropdown() },
         },
@@ -142,7 +167,7 @@ return {
       format_on_save = function(bufnr)
         local no_autoformat = { c = true, cpp = true }
         if no_autoformat[vim.bo[bufnr].filetype] then return end
-        return { timeout_ms = 500, lsp_format = 'fallback' }
+        return { timeout_ms = 3000, lsp_format = 'fallback' }
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
