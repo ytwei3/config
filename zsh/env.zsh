@@ -1,3 +1,4 @@
+export PATH="/Users/hikari/.local/share/solana/install/active_release/bin:$PATH"
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 

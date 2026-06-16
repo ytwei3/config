@@ -9,3 +9,6 @@
 !/iterm2/hikari.json
 
 !/zsh/
+
+!/ghostty/
+!/ghostty/**
