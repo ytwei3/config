@@ -27,7 +27,7 @@ palette = 4=#FC9867
 palette = 5=#AB9DF2
 palette = 6=#78DCE8
 palette = 7=#FCFCFA
-palette = 8=#727072
+palette = 8=#9E9CA0  # brighter than stock for readability on transparent bg
 palette = 9=#FF6188
 palette = 10=#87F299
 palette = 11=#F0EF96
