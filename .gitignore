@@ -4,6 +4,7 @@
 
 !/nvim/
 !/nvim/**
+nvim/lazy-lock.json
 
 !/iterm2/
 !/iterm2/hikari.json
