@@ -80,10 +80,14 @@ return {
     opts = {
       icons = { mappings = true },
       spec = {
+        { '<leader>b', group = '[B]uffer' },
         { '<leader>c', group = '[C]ode' },
         { '<leader>g', group = '[G]it' },
+        { '<leader>q', group = '[Q]uit/Session' },
         { '<leader>s', group = '[S]earch' },
+        { '<leader>t', group = '[T]erminal' },
         { '<leader>w', group = '[W]orkspace' },
+        { '<leader>x', group = '[X] Diagnostics' },
       },
     },
   },
@@ -97,7 +101,8 @@ return {
     keys = {
       { '<S-h>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Prev buffer' },
       { '<S-l>', '<Cmd>BufferLineCycleNext<CR>', desc = 'Next buffer' },
-      { '<leader>x', '<Cmd>bdelete<CR>', desc = 'Close buffer' },
+      { '<leader>bn', '<Cmd>BufferLineCycleNext<CR>', desc = '[B]uffer [N]ext' },
+      { '<leader>bp', '<Cmd>BufferLineCyclePrev<CR>', desc = '[B]uffer [P]rev' },
     },
     opts = {
       options = {

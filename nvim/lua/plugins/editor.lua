@@ -1,4 +1,32 @@
 return {
+  -- Auto-detect indentation (tab vs space, width)
+  { 'tpope/vim-sleuth' },
+
+  -- Session persistence: restore files on reopen
+  {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    opts = {},
+    keys = {
+      { '<leader>qs', function() require('persistence').load() end,               desc = '[S]ession restore' },
+      { '<leader>ql', function() require('persistence').load { last = true } end, desc = '[S]ession restore last' },
+      { '<leader>qd', function() require('persistence').stop() end,               desc = "[S]ession don't save" },
+    },
+  },
+
+  -- Diagnostics / references panel
+  {
+    'folke/trouble.nvim',
+    cmd = 'Trouble',
+    opts = { focus = true },
+    keys = {
+      { '<leader>xx', '<Cmd>Trouble diagnostics toggle<CR>',               desc = 'Diagnostics (all)' },
+      { '<leader>xd', '<Cmd>Trouble diagnostics toggle filter.buf=0<CR>',  desc = 'Diagnostics (buffer)' },
+      { '<leader>xs', '<Cmd>Trouble symbols toggle<CR>',                   desc = 'Symbols' },
+      { '<leader>xq', '<Cmd>Trouble qflist toggle<CR>',                    desc = 'Quickfix list' },
+    },
+  },
+
   -- Better text objects (va), ci", etc.)
   {
     'echasnovski/mini.ai',
