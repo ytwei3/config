@@ -59,6 +59,49 @@ return {
     opts = { signs = false },
   },
 
+  -- Comment toggle: gcc / gc<motion>
+  {
+    'echasnovski/mini.comment',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  -- Surround: ysiw" cs'" ds(
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
+    opts = {},
+  },
+
+  -- Flash motion: s to jump anywhere
+  {
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    opts = {},
+    keys = {
+      { 's', mode = { 'n', 'x', 'o' }, function() require('flash').jump() end, desc = 'Flash jump' },
+      { 'S', mode = { 'n', 'x', 'o' }, function() require('flash').treesitter() end, desc = 'Flash treesitter' },
+      { 'r', mode = 'o', function() require('flash').remote() end, desc = 'Flash remote' },
+    },
+  },
+
+  -- Linting
+  {
+    'mfussenegger/nvim-lint',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      local lint = require 'lint'
+      lint.linters_by_ft = {
+        python = { 'ruff' },
+      }
+      vim.api.nvim_create_autocmd({ 'BufWritePost', 'InsertLeave' }, {
+        group = vim.api.nvim_create_augroup('user-lint', { clear = true }),
+        callback = function() lint.try_lint() end,
+      })
+    end,
+  },
+
   -- Formatting on save
   {
     'stevearc/conform.nvim',

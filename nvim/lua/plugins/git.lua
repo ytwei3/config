@@ -31,6 +31,25 @@ return {
     },
   },
 
+  -- Diff viewer: side-by-side diff + file history
+  {
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    cmd = { 'DiffviewOpen', 'DiffviewFileHistory', 'DiffviewClose' },
+    keys = {
+      { '<leader>gv', '<Cmd>DiffviewOpen<CR>',        desc = '[G]it diff [V]iew' },
+      { '<leader>gh', '<Cmd>DiffviewFileHistory %<CR>', desc = '[G]it file [H]istory' },
+      { '<leader>gH', '<Cmd>DiffviewFileHistory<CR>',  desc = '[G]it repo [H]istory' },
+      { '<leader>gx', '<Cmd>DiffviewClose<CR>',        desc = '[G]it diff close' },
+    },
+    opts = {
+      enhanced_diff_hl = true,
+      view = {
+        default = { layout = 'diff2_horizontal' },
+      },
+    },
+  },
+
   -- LazyGit
   {
     'kdheepak/lazygit.nvim',

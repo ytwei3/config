@@ -91,7 +91,7 @@ return {
       require('mason-tool-installer').setup {
         ensure_installed = {
           'clangd', 'gopls', 'pyright', 'rust-analyzer', 'lua-language-server',
-          'stylua', 'black', 'isort', 'gofumpt',
+          'stylua', 'black', 'isort', 'gofumpt', 'ruff',
         },
       }
 
